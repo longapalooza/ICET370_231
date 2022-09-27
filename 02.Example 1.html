@@ -13068,7 +13068,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="02.Example-1"><u>02.Example 1</u><a class="anchor-link" href="#02.Example-1">¶</a></h1><h2 id="Given-and-Required:">Given and Required:<a class="anchor-link" href="#Given-and-Required:">¶</a></h2><p>Determine the data structure for the message "Dog" using a parity bit, two stop bits, and a 7-bit data frame. If a baud rate of 9600 bps is used, how long will it take to send the message? Use the <a href="https://en.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a> encoding system.</p>
+<h1 id="02.Example-1"><u>02.Example 1</u><a class="anchor-link" href="#02.Example-1">¶</a></h1><h2 id="Given-and-Required:">Given and Required:<a class="anchor-link" href="#Given-and-Required:">¶</a></h2><p>Determine the data structure for the message "Dog" using an even parity bit, two stop bits, and a 7-bit data frame. If a baud rate of 9600 bps is used, how long will it take to send the message? Use the <a href="https://en.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a> encoding system.</p>
 <h2 id="Solution:">Solution:<a class="anchor-link" href="#Solution:">¶</a></h2><p>The ASCII representation of the letters must first be determined. Referring to an ASCII table it may be seen that characters D, o, and g have the decimal representation of 68, 111, and 103, respectively. Python may be used to convert these decimal representation into binary representation. This is shown below.</p>
 </div>
 </div>
@@ -13222,9 +13222,9 @@ div#notebook {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">D_P</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="nb">len</span><span class="p">([</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">D_b</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">])</span> <span class="o">%</span> <span class="mi">2</span>
-<span class="n">o_P</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="nb">len</span><span class="p">([</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">o_b</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">])</span> <span class="o">%</span> <span class="mi">2</span>
-<span class="n">g_P</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="nb">len</span><span class="p">([</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">g_b</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">])</span> <span class="o">%</span> <span class="mi">2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">D_P</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">D_b</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">])</span> <span class="o">%</span> <span class="mi">2</span>
+<span class="n">o_P</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">o_b</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">])</span> <span class="o">%</span> <span class="mi">2</span>
+<span class="n">g_P</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">g_b</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">])</span> <span class="o">%</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">D_P</span><span class="p">,</span> <span class="n">o_P</span><span class="p">,</span> <span class="n">g_P</span><span class="p">)</span>
 </pre></div>
@@ -13236,7 +13236,7 @@ div#notebook {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1 1 0
+<pre>0 0 1
 </pre>
 </div>
 </div>
@@ -13278,9 +13278,9 @@ div#notebook {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['0', '0', '1', '0', '0', '0', '1', '1', '1', '1']
-['1', '1', '1', '1', '0', '1', '1', '1', '1', '1']
-['1', '1', '1', '0', '0', '1', '1', '0', '1', '1']
+<pre>['0', '0', '1', '0', '0', '0', '1', '0', '1', '1']
+['1', '1', '1', '1', '0', '1', '1', '0', '1', '1']
+['1', '1', '1', '0', '0', '1', '1', '1', '1', '1']
 </pre>
 </div>
 </div>
@@ -13315,9 +13315,9 @@ div#notebook {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['0', '0', '0', '1', '0', '0', '0', '1', '1', '1', '1']
-['0', '1', '1', '1', '1', '0', '1', '1', '1', '1', '1']
-['0', '1', '1', '1', '0', '0', '1', '1', '0', '1', '1']
+<pre>['0', '0', '0', '1', '0', '0', '0', '1', '0', '1', '1']
+['0', '1', '1', '1', '1', '0', '1', '1', '0', '1', '1']
+['0', '1', '1', '1', '0', '0', '1', '1', '1', '1', '1']
 </pre>
 </div>
 </div>
@@ -13350,7 +13350,7 @@ div#notebook {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['0', '0', '0', '1', '0', '0', '0', '1', '1', '1', '1', '0', '1', '1', '1', '1', '0', '1', '1', '1', '1', '1', '0', '1', '1', '1', '0', '0', '1', '1', '0', '1', '1']
+<pre>['0', '0', '0', '1', '0', '0', '0', '1', '0', '1', '1', '0', '1', '1', '1', '1', '0', '1', '1', '0', '1', '1', '0', '1', '1', '1', '0', '0', '1', '1', '1', '1', '1']
 </pre>
 </div>
 </div>
