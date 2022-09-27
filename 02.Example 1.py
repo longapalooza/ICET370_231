@@ -52,9 +52,9 @@ print(g_b)
 # In[5]:
 
 
-D_P = 1 - len([b for b in D_b if b == '1']) % 2
-o_P = 1 - len([b for b in o_b if b == '1']) % 2
-g_P = 1 - len([b for b in g_b if b == '1']) % 2
+D_P = len([b for b in D_b if b == '1']) % 2
+o_P = len([b for b in o_b if b == '1']) % 2
+g_P = len([b for b in g_b if b == '1']) % 2
 
 print(D_P, o_P, g_P)
 
